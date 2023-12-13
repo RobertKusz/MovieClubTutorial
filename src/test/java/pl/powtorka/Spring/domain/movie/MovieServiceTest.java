@@ -56,7 +56,9 @@ class MovieServiceTest {
         when(genre.getName()).thenReturn("genreNameTest");
 
         when(movie.getId()).thenReturn(movieId);
+
         when(movie.getDescription()).thenReturn("testDesctiption");
+        //asg
         when(movie.getGenre()).thenReturn(genre);
 
         when(movieRepository.findById(1L)).thenReturn(Optional.of(movie));
