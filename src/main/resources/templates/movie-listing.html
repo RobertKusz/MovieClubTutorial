@@ -19,10 +19,10 @@
                 <div class="movie-list-item-card">
                     <div class="movie-list-item-content">
                         <h3 class="movie-list-item-title">
-                            <a href="#">Tytuł filmu</a>
+                            <a href="#" th:text="${movie.title}">Tytuł filmu</a>
                         </h3>
-                        <h4>Angielski tytuł filmu</h4>
-                        <p>1999</p>
+                        <h4 th:text="${movie.originalTitle}">Angielski tytuł filmu</h4>
+                        <p th:text="${movie.releaseYear}">1999</p>
                     </div>
                     <div class="movie-list-item-rating">
                         <i class="fas fa-star"></i>
