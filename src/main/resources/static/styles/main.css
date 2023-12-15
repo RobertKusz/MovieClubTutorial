@@ -68,9 +68,9 @@ i powinna zajmować większość dostępnej przestrzeni
     padding: 8px;
     text-align: center;
 }
-/*FOOTER END*/
+/*FOOTER -----------------------------------------------------END*/
 
-/*Jumbotron START*/
+/*Jumbotron -------------------------------------------------- START*/
 .jumbotron {
     background-image: url("../img/jumbotron.png");
     background-position: center;
@@ -85,9 +85,9 @@ i powinna zajmować większość dostępnej przestrzeni
 .jumbotron-description {
     font-size: 1.2rem;
 }
-/*Jumbotron END*/
+/*Jumbotron ------------------------------------------ END*/
 
-/*Listing START*/
+/*Listing ------------------------------------------START*/
 /*Nagłówek*/
 .list-heading,
 .list-description {
@@ -125,9 +125,9 @@ i powinna zajmować większość dostępnej przestrzeni
 .movie-list-item-rating {
     font-size: 1.6rem;
 }
-/*Listing END*/
+/*Listing END ------------------------------------------*/
 
-/*movie.html*/
+/*movie.html ----------------------------------------------*/
 /*Informacje o filmie w jednym rzędzie z odstępem od jumbotrona*/
 .movie-summary{
     display: flex;
@@ -205,8 +205,8 @@ i powinna zajmować większość dostępnej przestrzeni
     display: block;
     margin: auto;
 }
-/*movie.html END*/
-/*error pages START*/
+/*movie.html ------------------------------------END*/
+/*error pages ---------------------------------- START*/
 .error-container{
     margin: 32px auto;
 }
@@ -219,7 +219,21 @@ i powinna zajmować większość dostępnej przestrzeni
     font-size: 2rem;
     margin: 16px 0;
 }
-/*error pages END*/
+/*error pages------------------------------------------ END*/
+
+/*genre-listing -------------------------------------*/
+.list-border{
+    margin: auto;
+    list-style: none;
+}
+
+.list-border > li{
+    font-size: 1.2rem;
+    border: 1px #6d6d6d solid;
+    padding: 16px;
+    text-align:center;
+}
+/*genre-listing -------------------------------------END*/
 
 
 
