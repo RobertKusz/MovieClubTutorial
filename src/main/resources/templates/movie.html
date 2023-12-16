@@ -10,8 +10,8 @@
     <main class="main-content" layout:fragment="content">
         <section class="movie">
             <div class="movie-summary">
-                <img src="../static/img/poster-placecholder.png"
-                     th:src="@{/img/posposter-placecholder.png}"
+                <img src="../static/img/poster-placeholder.png"
+                     th:src="${movie.poster ne null} ? @{|/img/${movie.poster}|} : @{/img/poster-placeholder.png}"
                      alt="tytuł"
                      th:alt="${movie.title}"
                      class="movie-summary-cover"

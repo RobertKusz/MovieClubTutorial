@@ -1,8 +1,8 @@
 package pl.powtorka.Spring.domain.movie.dto;
 
-import pl.powtorka.Spring.domain.genre.Genre;
-public class MovieDto {
-    private Long id;
+import org.springframework.web.multipart.MultipartFile;
+
+public class MovieSaveDto {
     private String title;
     private String originalTitle;
     private String shortDescription;
@@ -11,37 +11,7 @@ public class MovieDto {
     private Integer releaseYear;
     private String genre;
     private boolean promoted;
-    private String poster;
-
-    public MovieDto(Long id,
-                    String title,
-                    String originalTitle,
-                    String shortDescription,
-                    String description,
-                    String youtubeTrailerId,
-                    Integer releaseYear,
-                    String genre,
-                    boolean promoted,
-                    String poster) {
-        this.id = id;
-        this.title = title;
-        this.originalTitle = originalTitle;
-        this.shortDescription = shortDescription;
-        this.description = description;
-        this.youtubeTrailerId = youtubeTrailerId;
-        this.releaseYear = releaseYear;
-        this.genre = genre;
-        this.promoted = promoted;
-        this.poster = poster;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private MultipartFile poster;
 
     public String getTitle() {
         return title;
@@ -107,11 +77,11 @@ public class MovieDto {
         this.promoted = promoted;
     }
 
-    public String getPoster() {
+    public MultipartFile getPoster() {
         return poster;
     }
 
-    public void setPoster(String poster) {
+    public void setPoster(MultipartFile poster) {
         this.poster = poster;
     }
 }

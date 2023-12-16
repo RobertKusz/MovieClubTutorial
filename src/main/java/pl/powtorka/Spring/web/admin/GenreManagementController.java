@@ -1,4 +1,4 @@
-package pl.powtorka.Spring.domain.web.admin;
+package pl.powtorka.Spring.web.admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

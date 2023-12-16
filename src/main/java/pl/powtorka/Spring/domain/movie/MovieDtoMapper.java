@@ -12,7 +12,8 @@ class MovieDtoMapper {
                 movie.getYoutubeTrailerId(),
                 movie.getReleaseYear(),
                 movie.getGenre().getName(),
-                movie.isPromoted()
+                movie.isPromoted(),
+                movie.getPoster()
         );
     }
 }

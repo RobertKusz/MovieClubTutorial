@@ -253,7 +253,9 @@ textarea{
 /*większe inputy z paddingami*/
 .mc-form > input,
 .mc-form > textarea,
-.mc-form > button {
+.mc-form > button,
+.mc-form > select,
+ select > option{
     font-size: 1.2rem;
     color: black;
     padding: 8px;
@@ -264,7 +266,16 @@ textarea{
     color: #ffc107;
     border: none;
 }
-/*mc-form ------------------------------*/
+.mc-form > input[type=checkbox] {
+    transform: scale(1.5);
+    align-self: flex-start;
+    margin-left: 4px;
+
+}
+.mc-form > input[type=file] {
+    color: white;
+}
+/*mc-form ------------------------------ END*/
 
 /*notification-bar -------------------------*/
 .notification-bar {
