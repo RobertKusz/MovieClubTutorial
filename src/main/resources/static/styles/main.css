@@ -275,6 +275,10 @@ textarea{
 .mc-form > input[type=file] {
     color: white;
 }
+.mc-form-message{
+    color: #ffc107;
+    text-align: center;
+}
 /*mc-form ------------------------------ END*/
 
 /*notification-bar -------------------------*/

@@ -29,8 +29,8 @@
         <li class="menu-item">
             <a href="#" th:href="@{/gatunki-filmowe}">Gatunki</a>
         </li>
-        <li class="menu-item">
-            <a href="#" th:href="@{/admin}" sec:authorize="hasAnyRole('ADMIN', 'EDITOR')">Administracja</a>
+        <li class="menu-item" sec:authorize="hasAnyRole('ADMIN', 'EDITOR')">
+            <a href="#" th:href="@{/admin}">Administracja</a>
         </li>
         <li class="menu-item">
             <a href="#">Top10</a>
