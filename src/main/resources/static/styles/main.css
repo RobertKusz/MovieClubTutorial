@@ -289,6 +289,13 @@ textarea{
 }
 /*notification-bar -------------------------END*/
 
+/*other ------------------------------------------ START*/
+.registration-link {
+    text-align: center;
+    margin-top: 32px;
+}
+/*other ------------------------------------------ END*/
+
 /*Responsive*/
 @media only screen and (min-width: 992px) {
     /*Na ekranie powyżej 992px ukrywamy przycisk do rozwijania menu*/
