@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout}">
+      layout:decorate="~{layout}" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <title th:text="|${movie.title} - MovieClub|">Tytuł filmu MovieClub</title>
 </head>
@@ -31,22 +31,26 @@
             </div>
             <div class="movie-rating-container movie-section">
                 <h2 class="movie-section-heading">Ocena</h2>
-                <div>
-                    <p class="movie-rating-value" th:text="${avgRating}">4.0</p>
-                    <p>Liczba ocen: 134</p>
+                <p th:unless="${movie.ratingCount}">Brak głosów</p>
+                <div th:if="${movie.ratingCount}">
+                    <p class="movie-rating-value" th:text="${#numbers.formatDecimal(movie.avgRating, 1, 1)}">4.0</p>
+                    <p th:text="|Liczba ocen: ${movie.ratingCount}|">Liczba ocen: 134</p>
                 </div>
-                <form action="#" class="movie-rating-form">
+                <form action="#" th:action="@{/ocen-film}"
+                      class="movie-rating-form" method="post"
+                      sec:authorize="isAuthenticated()">
                     <p>Twoja ocena</p>
-                    <input type="hidden" name="movieId">
+                    <input type="hidden" name="movieId" th:value="${movie.id}">
                     <div class="movie-rating-buttons">
-                        <button class="movie-rating-button"><i class="fa-solid fa-star"></i></button>
-                        <button class="movie-rating-button"><i class="fa-solid fa-star"></i></button>
-                        <button class="movie-rating-button"><i class="fa-solid fa-star"></i></button>
-                        <button class="movie-rating-button"><i class="fa-solid fa-star"></i></button>
-                        <button class="movie-rating-button"><i class="fa-regular fa-star"></i></button>
+                        <button class="movie-rating-button"
+                                name="rating"
+                                th:each="i : ${#numbers.sequence(1,5)}"
+                                th:value="${i}">
+                            <i class="fa-star" th:classappend="${i <= userRating ? 'fa-solid' : 'fa-regular'}"></i>
+                        </button>
                     </div>
                 </form>
-                <p><a href="#">Zaloguj się</a>, aby oddać głos</p>
+                <p sec:authorize="!isAuthenticated()"><a href="#" th:href="@{/login}">Zaloguj się</a>, aby oddać głos</p>
             </div>
         </section>
         <section class="movie-trailer-container movie-section">
