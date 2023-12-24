@@ -11,6 +11,7 @@ import pl.powtorka.Spring.domain.movie.MovieService;
 import pl.powtorka.Spring.domain.movie.dto.MovieDto;
 import pl.powtorka.Spring.domain.rating.RatingService;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -33,9 +34,15 @@ public class MovieController {
             Integer rating = ratingService.getUserRatingForMovie(currentUserEmail, id).orElse(0);
             model.addAttribute("userRating", rating);
         }
-
-//        Optional<MovieDto> optionalMovie = movieService.findMovieById(id);
-//        optionalMovie.ifPresent(movieDto -> model.addAttribute("movie", movieDto));
         return "movie";
+    }
+    @GetMapping("/top10")
+    public String findTop10(Model model){
+        List<MovieDto> top10Movies = movieService.findTopMovies(10);
+        model.addAttribute("heading", "Filmowe TOP10");
+        model.addAttribute("desctiption", "Filmy najlepiej oceniane przez użutkowników");
+        model.addAttribute("movies", top10Movies);
+        return "movie-listing";
+
     }
 }

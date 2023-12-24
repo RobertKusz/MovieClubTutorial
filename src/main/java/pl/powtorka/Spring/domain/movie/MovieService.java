@@ -1,5 +1,6 @@
 package pl.powtorka.Spring.domain.movie;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import pl.powtorka.Spring.domain.genre.Genre;
 import pl.powtorka.Spring.domain.genre.GenreRepository;
@@ -56,5 +57,12 @@ public class MovieService {
             movie.setPoster(savedFileName);
         }
         movieRepository.save(movie);
+    }
+    public List<MovieDto> findTopMovies(int size){
+        Pageable page = Pageable.ofSize(size);
+        return movieRepository.findTopByRating(page)
+                .stream().
+                map(MovieDtoMapper::map)
+                .toList();
     }
 }
